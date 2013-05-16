@@ -7,7 +7,7 @@
         dimensions = dimensions || 2;
 
         // square distances
-        var M = numeric.mul(-.5, numeric.pow(distances, 2));
+        var M = numeric.mul(-0.5, numeric.pow(distances, 2));
 
         // double centre the rows/columns
         function mean(A) { return numeric.div(numeric.add.apply(null, A), A.length); }
@@ -33,7 +33,7 @@
     /// draws a scatter plot of points, useful for displaying the output
     /// from mds.classic etc
     mds.drawD3ScatterPlot = function(element, xPos, yPos, labels, params) {
-        params = params || {}
+        params = params || {};
         var padding = params.padding || 32,
             w = params.w || Math.min(720, document.documentElement.clientWidth - padding),
             h = params.h || w,
@@ -97,6 +97,6 @@
             .text(function(d) { return d; })
             .attr("x", function(d, i) { return xScale(xPos[i]); })
             .attr("y", function(d, i) { return yScale(yPos[i]) - 2 *pointRadius; });
-    }
+    };
 }(window.mds = window.mds || {}));
 
